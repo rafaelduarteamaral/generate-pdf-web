@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { PropostaComponent } from './proposta/proposta.component';
 import { HeaderComponent } from './header/header.component';
+import { PropostaFormularioComponent } from './proposta-formulario/proposta-formulario.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     PropostaComponent,
-    HeaderComponent
+    HeaderComponent,
+    PropostaFormularioComponent
   ],
   imports: [
     BrowserModule,
