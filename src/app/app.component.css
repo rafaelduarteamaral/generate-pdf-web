@@ -68,9 +68,12 @@ body {
   /* Scrollable contents if viewport is shorter than content. */
 }
 
-.sidebar .nav-link {
-  font-weight: 500;
-  color: #fff;
+.nav-item a {
+  color: #727272;
+}
+
+.nav-item a:hover {
+  color: #2162C2;
 }
 
 .sidebar .nav-link .feather {

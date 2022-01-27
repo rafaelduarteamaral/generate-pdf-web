@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { PropostaComponent } from './proposta/proposta.component';
 import { HeaderComponent } from './header/header.component';
 import { PropostaFormularioComponent } from './proposta-formulario/proposta-formulario.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PropostaFormularioComponent } from './proposta-formulario/proposta-form
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

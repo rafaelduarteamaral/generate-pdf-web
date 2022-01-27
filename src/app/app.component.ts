@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Usuario } from './models/usuario';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +8,34 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'excel-generate-front';
-  logado = false
+  title = 'Destak';
+  logado = false;
+  usuario = {} as Usuario | any;
+  router: Router;
+
+  constructor(router: Router){ this.router = router;}
+
+  ngOnInit(): void {
+    this.usuario = localStorage.getItem('user_logged');
+
+    if(this.usuario) {
+      this.usuario = JSON.parse(this.usuario)
+      if(this.usuario && !this.usuario.auth) {
+        this.router.navigate(['/login']);
+        this.logado = false;
+      } else {
+        this.router.navigate(['/proposta']);
+        this.logado = true;
+      }
+    }
+
+    if(!this.usuario) {
+      this.router.navigate(['/login']);
+    }
+  }
+
+  logout() {
+    this.usuario = localStorage.clear();
+    this.router.navigate(['/login'])
+  }
 }
