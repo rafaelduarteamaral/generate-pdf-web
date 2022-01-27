@@ -3,6 +3,8 @@
   max-width: 330px;
   padding: 15px;
   margin: auto;
+  background-color: #FFF;
+  border-radius: 6px;
 }
 
 .form-signin .checkbox {
@@ -25,5 +27,8 @@
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   width: 300px;
+}
 
+.container {
+  background-color: #165AE9;
 }
