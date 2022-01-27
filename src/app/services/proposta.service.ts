@@ -15,7 +15,7 @@ export class PropostaService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
 
-  url = 'http://localhost:3333/proposta';
+  url = 'http://localhost:3333/propostas';
 
   // Obtem todos os carros
   getPropostas(): Observable<Proposta[]> {
