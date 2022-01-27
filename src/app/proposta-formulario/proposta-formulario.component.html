@@ -1,18 +1,14 @@
 <div class="container">
   <main>
     <div class="py-5 text-center">
-      <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-      <h2>Checkout form</h2>
-      <p class="lead">Below is an example form built entirely with Bootstrap’s form controls. Each required form group
-        has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+      <h2>Nova Proposta</h2>
     </div>
 
-    <div class="row g-5">
-      <div class="col-md-7 col-lg-8">
-        <h4 class="mb-3">Billing address</h4>
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-8">
         <form class="needs-validation" novalidate>
           <div class="row g-3">
-            <div class="col-sm-12">
+            <div class="col-sm-6">
               <label for="cliente" class="form-label">Com quem eu falo por gentileza?</label>
               <input type="text" class="form-control" id="cliente" placeholder="examle@mail.com" value="" required>
               <div class="invalid-feedback">
@@ -28,7 +24,7 @@
               </div>
             </div>
 
-            <div class="col-12">
+            <div class="col-6">
               <label for="origemVeiculo" class="form-label">Qual é a origem do seu veiculo?</label>
               <div class="input-group has-validation">
                 <input type="text" class="form-control" id="origemVeiculo" placeholder="Brasília-DF" required>
@@ -38,7 +34,7 @@
               </div>
             </div>
 
-            <div class="col-12">
+            <div class="col-6">
               <label for="destinoVeiculo" class="form-label">Qual é o destino do seu veiculo</label>
               <input type="text" class="form-control" id="destinoVeiculo" placeholder="Brasília-DF" required>
               <div class="invalid-feedback">
@@ -56,29 +52,29 @@
 
             <div class="col-6">
               <label for="valorTotalVeiculo" class="form-label">Valor FIPE do veiculo</label>
-              <input type="text" class="form-control" id="valorTotalVeiculo" placeholder="R$10.000,00" required>
+              <input type="number" class="form-control" id="valorTotalVeiculo" placeholder="R$10.000,00" required>
               <div class="invalid-feedback">
                 Please enter your shipping address.
               </div>
             </div>
 
 
-            <div class="col-12">
+            <div class="col-6">
               <label for="coleta" class="form-label">Valor de coleta
                 <span class="text-muted">(Endereço de coleta do veiculo)</span>
               </label>
-              <input type="text" class="form-control" id="coleta" placeholder="R$1.000,00">
+              <input type="number" class="form-control" id="coleta" placeholder="R$1.000,00">
             </div>
 
-            <div class="col-12">
+            <div class="col-6">
               <label for="entrega" class="form-label">Valor de entrega</label>
-              <input type="text" class="form-control" id="entrrega" placeholder="R$1.000,00" required>
+              <input type="number" class="form-control" id="entrrega" placeholder="R$1.000,00" required>
               <div class="invalid-feedback">
                 Please enter your shipping address.
               </div>
             </div>
 
-            <div class="col-12">
+            <div class="col-6">
               <label for="observacao" class="form-label">Nós da Destak Brasil, também oferecemos o serviço de coleta e entrega de veiculo em sua casa ou onde o senhor desejar. 
                 O senhor(a) deseja adicionar esse serviço a sua proposta? 
                 Se sim, qual o local de coleta?</label>
@@ -96,7 +92,7 @@
               </div>
             </div>
 
-            <div class="col-12">
+            <div class="col-6">
               <label for="orcamentoServico" class="form-label">Orçamento de Serviço</label>
               <input type="text" class="form-control" id="orcamentoServico" placeholder="" required>
               <div class="invalid-feedback">
@@ -104,7 +100,7 @@
               </div>
             </div>
 
-            <div class="col-12">
+            <div class="col-6">
               <label for="observacao" class="form-label">Observações da negociação</label>
               <input type="text" class="form-control" id="coleta" placeholder="" required>
               <div class="invalid-feedback">
@@ -112,7 +108,7 @@
               </div>
             </div>
 
-            <div class='col-12'>
+            <div class='col-6'>
               <label for="observacao" class="form-label">
                 Senhor (a), obrigada por todas as informaçoes,
                 iremos gerara sua proposta e em seguida
@@ -120,15 +116,15 @@
               </label>
             </div>
 
-            <div class="col-12">
+            <div class="col-6">
               <label for="valorTransporte" class="form-label">Valor do transporte</label>
-              <input type="text" class="form-control" id="valorTransporte" placeholder="R$1.000,00" required>
+              <input type="number" class="form-control" id="valorTransporte" placeholder="R$1.000,00" required>
               <div class="invalid-feedback">
                 Please enter your shipping address.
               </div>
             </div>
 
-            <div class="col-12">
+            <div class="col-6">
               <label for="prazoEntrega" class="form-label">Prazo de entrega</label>
               <input type="text" class="form-control" id="prazoEntrega" placeholder="" required>
               <div class="invalid-feedback">
@@ -141,18 +137,20 @@
 
           <hr class="my-4">
 
-          <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
+          <button class="w-100 btn btn-primary btn-lg" type="submit">Gerar Proposta</button>
         </form>
       </div>
     </div>
   </main>
 
   <footer class="my-5 pt-5 text-muted text-center text-small">
-    <p class="mb-1">&copy; 2017–2021 Company Name</p>
-    <ul class="list-inline">
-      <li class="list-inline-item"><a href="#">Privacy</a></li>
-      <li class="list-inline-item"><a href="#">Terms</a></li>
-      <li class="list-inline-item"><a href="#">Support</a></li>
-    </ul>
+    <p class="mb-1">&copy; Destak</p>
+     <!-- 
+       <ul class="list-inline">
+        <li class="list-inline-item"><a href="#">Privacy</a></li>
+        <li class="list-inline-item"><a href="#">Terms</a></li>
+        <li class="list-inline-item"><a href="#">Support</a></li>
+      </ul>
+      -->
   </footer>
 </div>

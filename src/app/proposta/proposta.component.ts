@@ -16,7 +16,6 @@ export class PropostaComponent implements OnInit {
   constructor(private propostaService: PropostaService) { }
 
   ngOnInit(): void {
-    console.log('entrou aqui besta')
     this.getPropostas();
   }
 
