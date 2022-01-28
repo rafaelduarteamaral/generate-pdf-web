@@ -9,22 +9,41 @@
         <form id="add-form" (ngSubmit)="f.form.valid && saveProposta(f)" #f="ngForm" novalidate>
           <div class="row g-3">
 
-            <input [(ngModel)]="proposta.idUsuario" name="idUsuario" type="text" class="form-control" style="display: none;" id="idUsuario"
-                placeholder="examle@mail.com" required>
+            <input [(ngModel)]="proposta.idUsuario" name="idUsuario" type="text" class="form-control"
+              style="display: none;" id="idUsuario" placeholder="" required>
 
             <div class="col-sm-6">
               <label for="cliente" class="form-label">Com quem eu falo por gentileza?</label>
               <input [(ngModel)]="proposta.cliente" name="cliente" type="text" class="form-control" id="cliente"
-                placeholder="examle@mail.com" value="" required>
+                placeholder="" value="" required>
             </div>
 
             <div class="col-sm-6">
-              <label for="anoVeiculo" class="form-label">Qual é o modelo e ano do seu veiculo?</label>
-              <input [(ngModel)]="proposta.anoVeiculo" name="anoVeiculo" type="text" class="form-control"
-                id="anoVeiculo" placeholder="Honda Civic - 2020/2020" value="" required>
+              <label for="emailCliente" class="form-label">Com quem eu falo por gentileza?</label>
+              <input [(ngModel)]="proposta.emailCliente" name="emailCliente" type="text" class="form-control"
+                id="emailCliente" placeholder="examle@mail.com" value="" required>
             </div>
 
-            <div class="col-6">
+
+            <div class="col-sm-6">
+              <label for="modeloVeiculo" class="form-label">Qual é o modelo do seu veiculo?</label>
+              <input [(ngModel)]="proposta.modeloVeiculo" name="modeloVeiculo" type="text" class="form-control"
+                id="modeloVeiculo" placeholder="Honda Civic" value="" required>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="anoVeiculo" class="form-label">Qual é o ano do seu veiculo?</label>
+              <input [(ngModel)]="proposta.anoVeiculo" name="anoVeiculo" type="text" class="form-control"
+                id="anoVeiculo" placeholder="2020/2020" value="" required>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="corVeiculo" class="form-label">Qual é a cor do seu veiculo?</label>
+              <input [(ngModel)]="proposta.corVeiculo" name="corVeiculo" type="text" class="form-control"
+                id="anoVeiculo" placeholder="Preto" value="" required>
+            </div>
+
+            <div class="col-sm-6">
               <label for="origemVeiculo" class="form-label">Qual é a origem do seu veiculo?</label>
               <div class="input-group has-validation">
                 <input [(ngModel)]="proposta.origemVeiculo" name="origemVeiculo" type="text" class="form-control"
@@ -32,40 +51,39 @@
               </div>
             </div>
 
-            <div class="col-6">
+            <div class="col-sm-6">
               <label for="destinoVeiculo" class="form-label">Qual é o destino do seu veiculo</label>
               <input [(ngModel)]="proposta.destinoVeiculo" name="destinoVeiculo" type="text" class="form-control"
                 id="destinoVeiculo" placeholder="Brasília-DF" required>
             </div>
 
-            <div class="col-6">
+            <div class="col-sm-6">
               <label for="telefoneCelular" class="form-label">Pode me informar o seu número de telefone?</label>
               <input [(ngModel)]="proposta.telefoneCelular" name="telefoneCelular" type="text" class="form-control"
                 id="telefoneCelular" placeholder="(61) 99999-9999" required>
             </div>
 
-            <div class="col-6">
+            <div class="col-sm-6">
               <label for="valorTotalVeiculo" class="form-label">Valor FIPE do veiculo</label>
-              <input [(ngModel)]="proposta.valorTotalVeiculo" name="valorTotalVeiculo" type="number"
+              <input [(ngModel)]="proposta.valorTotalVeiculo" name="valorTotalVeiculo" type="string"
                 class="form-control" id="valorTotalVeiculo" placeholder="R$10.000,00" required>
             </div>
 
 
-            <div class="col-6">
-              <label for="coleta" class="form-label">Valor de coleta
-                <span class="text-muted">(Endereço de coleta do veiculo)</span>
+            <div class="col-sm-6">
+              <label for="valorColeta" class="form-label">Valor de coleta
               </label>
-              <input [(ngModel)]="proposta.coleta" name="coleta" type="number" class="form-control" id="coleta"
-                placeholder="R$1.000,00">
+              <input [(ngModel)]="proposta.valorColeta" name="valorColeta" type="string" class="form-control"
+                id="valorColeta" placeholder="R$1.000,00">
             </div>
 
-            <div class="col-6">
+            <div class="col-sm-6">
               <label for="entrega" class="form-label">Valor de entrega</label>
-              <input [(ngModel)]="proposta.entrega" name="entrrega" type="number" class="form-control" id="entrrega"
+              <input [(ngModel)]="proposta.entrega" name="entrrega" type="string" class="form-control" id="entrrega"
                 placeholder="R$1.000,00" required>
             </div>
 
-            <div class="col-6">
+            <div class="col-sm-6">
               <label for="observacao" class="form-label">Nós da Destak Brasil, também oferecemos o serviço de coleta e
                 entrega de veiculo em sua casa ou onde o senhor desejar.
                 O senhor(a) deseja adicionar esse serviço a sua proposta?
@@ -74,26 +92,26 @@
                 class="form-control" id="enderecoColetaVeiculo" placeholder="Brasília-DF" required>
             </div>
 
-            <div class="col-6">
+            <div class="col-sm-6">
               <label for="observacao" class="form-label">Certo, e qual o local de entega?</label>
               <input [(ngModel)]="proposta.enderecoEntregaVeiculo" name="enderecoEntregaVeiculo" type="text"
                 class="form-control" id="enderecoEntregaVeiculo" placeholder="Brasília-DF" required>
             </div>
 
-            <div class="col-6">
+            <div class="col-sm-6">
               <label for="orcamentoServico" class="form-label">Orçamento de Serviço</label>
               <input [(ngModel)]="proposta.orcamentoServico" name="orcamentoServico" type="text" class="form-control"
                 id="orcamentoServico" placeholder="" required>
             </div>
 
-            <div class="col-6">
+            <div class="col-sm-6">
               <label for="observacao" class="form-label">Observações da negociação</label>
-              <textarea [(ngModel)]="proposta.obeservacao" name="obeservacao" id="story" name="story"
-                class="form-label" rows="5" cols="33">
+              <textarea [(ngModel)]="proposta.obeservacao" name="obeservacao" id="story" name="story" class="form-label"
+                rows="5" cols="33">
               </textarea>
             </div>
 
-            <div class='col-6'>
+            <div class='col-sm-6'>
               <label for="observacao" class="form-label">
                 Senhor (a), obrigada por todas as informaçoes,
                 iremos gerara sua proposta e em seguida
@@ -101,18 +119,52 @@
               </label>
             </div>
 
-            <div class="col-6">
+            <div class="col-sm-6">
               <label for="valorTransporte" class="form-label">Valor do transporte</label>
               <input [(ngModel)]="proposta.valorTransporte" name="valorTransporte" type="text" class="form-control"
                 id="valorTransporte" placeholder="R$1.000,00" required>
             </div>
 
-            <div class="col-6">
+            <div class="col-sm-6">
               <label for="prazoEntrega" class="form-label">Prazo de entrega</label>
-              <input [(ngModel)]="proposta.prazoEntrega" name="prazoEntrega" type="text" class="form-control prazoEntrega"
-                id="prazoEntrega" placeholder="" required>
+              <input [(ngModel)]="proposta.prazoEntrega" name="prazoEntrega" type="text"
+                class="form-control prazoEntrega" id="prazoEntrega" placeholder="" required>
             </div>
 
+            <div class="col-sm-6">
+
+            </div>
+
+            <div class="col-sm-6">
+              <div class="form-check">
+                <input class="form-check-input" [(ngModel)]="proposta.diasUteis" value="10" type="radio"
+                  name="diasUteis" id="diasUteis1">
+                <label class="form-check-label" for="diasUteis1">
+                  Até 10 dias úteis
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" [(ngModel)]="proposta.diasUteis" value="15" type="radio"
+                  name="diasUteis" id="diasUteis2" checked>
+                <label class="form-check-label" for="diasUteis1">
+                  Até 15 dias úteis
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" [(ngModel)]="proposta.diasUteis" value="20" type="radio"
+                  name="diasUteis" id="diasUteis2" checked>
+                <label class="form-check-label" for="diasUteis1">
+                  Até 20 dias úteis
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" [(ngModel)]="proposta.diasUteis" value="25" type="radio"
+                  name="diasUteis" id="diasUteis2" checked>
+                <label class="form-check-label" for="diasUteis1">
+                  Até 25 dias úteis
+                </label>
+              </div>
+            </div>
 
           </div>
 

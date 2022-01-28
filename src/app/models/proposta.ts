@@ -16,5 +16,10 @@ export interface Proposta {
     entrega?: string
     prazoEntrega?: string
     idUsuario?: string
-    valorTransporte: string
+    valorTransporte: string;
+    modeloVeiculo: string;
+    corVeiculo: string;
+    emailCliente: string;
+    valorColeta: string;
+    diasUteis: string;
 }
