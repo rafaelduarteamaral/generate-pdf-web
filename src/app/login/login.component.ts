@@ -39,14 +39,9 @@ export class LoginComponent implements OnInit {
   loginUsuario(form: NgForm) {
     this.usuarioService.loginUsuario(this.usuario).subscribe((usuario) => {
       this.cleanForm(form);
-      Swal.fire({
-        title: 'Sucesso!',
-        text: 'Usuário logado com sucesso!',
-        icon: 'success',
-        confirmButtonText: 'Cool'
-      }) 
       localStorage.setItem('user_logged', JSON.stringify(usuario));
       this.router.navigate(['/proposta']);
+      location.reload();
     },
     (err) => {
       Swal.fire({
@@ -57,6 +52,7 @@ export class LoginComponent implements OnInit {
       }) 
     });
   }
+  
   
 
   cleanForm(form: NgForm) {

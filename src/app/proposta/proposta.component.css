@@ -1,3 +1,13 @@
 .datatablecss {
-    width: auto;
+    width: 80vw;
+}
+
+.buttonPdf {
+    cursor: pointer;
+    transition: 100ms;
+
+}
+
+.buttonPdf:hover {
+    color: blue;
 }

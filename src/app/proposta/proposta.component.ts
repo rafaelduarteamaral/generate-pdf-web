@@ -28,10 +28,8 @@ export class PropostaComponent implements OnInit {
     this.propostaService.getPropostas().subscribe((propostas: Proposta[]) => {
       this.propostas = propostas;
     });
-
   }
-  
 
-  
+  gerarPdf(): any {}
 
 }

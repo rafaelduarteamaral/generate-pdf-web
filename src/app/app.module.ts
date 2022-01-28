@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { PropostaFormularioComponent } from './proposta-formulario/proposta-formulario.component';
 import { FormsModule } from '@angular/forms';
 import { DataTablesModule } from 'angular-datatables';
+import { PdfPropostaComponent } from './pdf-proposta/pdf-proposta.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { DataTablesModule } from 'angular-datatables';
     LoginComponent,
     PropostaComponent,
     HeaderComponent,
-    PropostaFormularioComponent
+    PropostaFormularioComponent,
+    PdfPropostaComponent
   ],
   imports: [
     BrowserModule,

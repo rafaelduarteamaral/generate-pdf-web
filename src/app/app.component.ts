@@ -32,6 +32,7 @@ export class AppComponent {
   }
 
   logout() {
+    location.reload();
     this.usuario = localStorage.clear();
     this.router.navigate(['/login'])
   }

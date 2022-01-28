@@ -8,6 +8,10 @@
       <div class="col-md-8">
         <form id="add-form" (ngSubmit)="f.form.valid && saveProposta(f)" #f="ngForm" novalidate>
           <div class="row g-3">
+
+            <input [(ngModel)]="proposta.idUsuario" name="idUsuario" type="text" class="form-control" style="display: none;" id="idUsuario"
+                placeholder="examle@mail.com" required>
+
             <div class="col-sm-6">
               <label for="cliente" class="form-label">Com quem eu falo por gentileza?</label>
               <input [(ngModel)]="proposta.cliente" name="cliente" type="text" class="form-control" id="cliente"

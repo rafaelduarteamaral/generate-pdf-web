@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Proposta } from '../models/proposta';
 import { PropostaService } from '../services/proposta.service';
 import Swal from 'sweetalert2';
+import { Usuario } from '../models/usuario';
 
 
 @Component({
@@ -14,10 +15,18 @@ export class PropostaFormularioComponent implements OnInit {
 
   proposta = {} as Proposta;
   propostas: Proposta[] | undefined;
+  usuario = {} as Usuario | any;
 
   constructor(private propostaService: PropostaService) { }
 
   ngOnInit(): void {
+    
+    this.usuario = localStorage.getItem('user_logged');
+    this.usuario = JSON.parse(this.usuario)
+    this.proposta.idUsuario =this.usuario.id;
+
+
+
     (function () {
       'use strict'
     
@@ -43,6 +52,7 @@ export class PropostaFormularioComponent implements OnInit {
 
     // defini se um carro será criado ou atualizado
     saveProposta(form: NgForm) {
+
       if (this.proposta.id !== undefined) {
         this.propostaService.updateProposta(this.proposta).subscribe(() => {
           this.cleanForm(form);
