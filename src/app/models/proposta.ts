@@ -1,4 +1,5 @@
 export interface Proposta {
+    id: string
     cliente?: string
     anoVeiculo?: string
     origemVeiculo?: string
@@ -15,4 +16,5 @@ export interface Proposta {
     entrega?: string
     prazoEntrega?: string
     idUsuario?: string
+    valorTransporte: string
 }

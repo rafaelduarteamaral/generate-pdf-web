@@ -24,13 +24,8 @@ export class AppComponent {
         this.router.navigate(['/login']);
         this.logado = false;
       } else {
-        this.router.navigate(['/proposta']);
         this.logado = true;
       }
-    }
-
-    if(!this.usuario) {
-      this.router.navigate(['/login']);
     }
   }
 

@@ -69,7 +69,11 @@ body {
 }
 
 .nav-item a {
-  color: #727272;
+  color: #fff;
+}
+
+.buttonEnvio {
+  margin-left: 20px;
 }
 
 .nav-item a:hover {

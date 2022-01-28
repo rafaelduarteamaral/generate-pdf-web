@@ -17,13 +17,30 @@ export class PropostaService {
 
   url = 'http://localhost:3333/propostas';
 
-  // Obtem todos os carros
   getPropostas(): Observable<Proposta[]> {
     return this.httpClient.get<Proposta[]>(this.url)
       .pipe(
         retry(2),
         catchError(this.handleError))
   }
+
+
+  saveProposta(car: Proposta): Observable<Proposta> {
+    return this.httpClient.post<Proposta>(this.url, JSON.stringify(car), this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
+
+  updateProposta(car: Proposta): Observable<Proposta> {
+    return this.httpClient.put<Proposta>(this.url + '/' + car.id, JSON.stringify(car), this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
+
 
   // Manipulação de erros
   handleError(error: HttpErrorResponse) {

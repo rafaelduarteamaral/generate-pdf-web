@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
         confirmButtonText: 'Cool'
       }) 
       localStorage.setItem('user_logged', JSON.stringify(usuario));
-
+      this.router.navigate(['/proposta']);
     },
     (err) => {
       Swal.fire({

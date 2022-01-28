@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Proposta } from '../models/proposta';
+import { PropostaService } from '../services/proposta.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-proposta-formulario',
@@ -7,7 +11,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PropostaFormularioComponent implements OnInit {
 
-  constructor() { }
+  proposta = {} as Proposta;
+  propostas: Proposta[] | undefined;
+
+  constructor(private propostaService: PropostaService) { }
 
   ngOnInit(): void {
     (function () {
@@ -31,5 +38,51 @@ export class PropostaFormularioComponent implements OnInit {
     })()
     
   }
+
+    // defini se um carro será criado ou atualizado
+    saveProposta(form: NgForm) {
+      if (this.proposta.id !== undefined) {
+        this.propostaService.updateProposta(this.proposta).subscribe(() => {
+          this.cleanForm(form);
+          Swal.fire({
+            title: 'Sucesso!',
+            text: 'Proposta gerada!',
+            icon: 'success',
+            confirmButtonText: 'Cool'
+          }) 
+        },
+        (err) => {
+          Swal.fire({
+            title: 'Error!',
+            text: 'Erro ao gerar a proposta!',
+            icon: 'error',
+            confirmButtonText: 'Cool'
+          }) 
+        });
+      } else {
+        this.propostaService.saveProposta(this.proposta).subscribe(() => {
+          this.cleanForm(form);
+          Swal.fire({
+            title: 'Sucesso!',
+            text: 'Proposta gerada!',
+            icon: 'success',
+            confirmButtonText: 'Cool'
+          }) 
+        },
+        (err) => {
+          Swal.fire({
+            title: 'Error!',
+            text: 'Erro ao gerar a proposta!',
+            icon: 'error',
+            confirmButtonText: 'Cool'
+          }) 
+        });
+      }
+    }
+
+    cleanForm(form: NgForm) {
+      form.resetForm();
+      this.proposta = {} as Proposta;
+    }
 
 }
