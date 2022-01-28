@@ -4,6 +4,8 @@ import { PropostaService } from '../services/proposta.service';
 import { DataTableDirective } from 'angular-datatables';
 import { Subject } from 'rxjs';
 import jsPDF from 'jspdf';
+import {MatDialog} from '@angular/material/dialog';
+import { PdfPropostaComponent } from '../pdf-proposta/pdf-proposta.component';
 
 @Component({
   selector: 'app-proposta',
@@ -17,10 +19,8 @@ export class PropostaComponent implements OnInit {
   propostas: Proposta[] | any = [];
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject<any>();
-  @ViewChild('content', {static: false}) el!: ElementRef;
 
-
-  constructor(private propostaService: PropostaService) { }
+  constructor(private propostaService: PropostaService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getPropostas();
@@ -33,17 +33,16 @@ export class PropostaComponent implements OnInit {
   }
 
   
-  printPDF() {
-    let pdf = new jsPDF('p', 'pt', 'a4');
-    pdf.html(this.el.nativeElement, {
-      callback: (pdf) => {
-        pdf.save('proposta.pdf')
-      }
-    })
+
+  openDialog(propostaItem: Proposta) {
+    const dialogRef = this.dialog.open(PdfPropostaComponent, {
+      height: '80vh',
+      data: propostaItem
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
-  openModal(content: any) {
-    
-  }
 
 }
