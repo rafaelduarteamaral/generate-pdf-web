@@ -11,6 +11,7 @@ import { PropostaFormularioComponent } from './proposta-formulario/proposta-form
 import { FormsModule } from '@angular/forms';
 import { DataTablesModule } from 'angular-datatables';
 import { PdfPropostaComponent } from './pdf-proposta/pdf-proposta.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PdfPropostaComponent } from './pdf-proposta/pdf-proposta.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    DataTablesModule
+    DataTablesModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
