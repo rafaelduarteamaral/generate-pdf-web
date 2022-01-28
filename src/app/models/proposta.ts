@@ -14,7 +14,6 @@ export interface Proposta {
     orcamentoServico?: string
     coleta?: string
     entrega?: string
-    prazoEntrega?: string
     idUsuario?: string
     valorTransporte: string;
     modeloVeiculo: string;
