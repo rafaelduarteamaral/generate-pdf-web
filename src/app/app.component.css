@@ -1,23 +1,3 @@
-html,
-body {
-  height: 100vh;
-}
-
-
-.bd-placeholder-img {
-  font-size: 1.125rem;
-  text-anchor: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-}
-
-@media (min-width: 768px) {
-  .bd-placeholder-img-lg {
-    font-size: 3.5rem;
-  }
-}
-
 body {
   font-size: .875rem;
 }
@@ -29,25 +9,21 @@ body {
 }
 
 /*
-   * Sidebar
-   */
+ * Sidebar
+ */
 
 .sidebar {
-  display: flex;
   position: fixed;
-  justify-content: space-between;
   top: 0;
-  background-color: #2162C2;
   /* rtl:raw:
-    right: 0;
-    */
+  right: 0;
+  */
   bottom: 0;
   /* rtl:remove */
   left: 0;
-  z-index: 100;
-  /* Behind the navbar */
-  padding: 48px 0 0;
-  /* Height of navbar */
+  z-index: 100; /* Behind the navbar */
+  padding: 48px 0 0; /* Height of navbar */
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
 }
 
 @media (max-width: 767.98px) {
@@ -56,29 +32,31 @@ body {
   }
 }
 
-
-
 .sidebar-sticky {
   position: relative;
   top: 0;
   height: calc(100vh - 48px);
   padding-top: .5rem;
   overflow-x: hidden;
-  overflow-y: auto;
-  /* Scrollable contents if viewport is shorter than content. */
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
 }
 
-.nav-item a {
+.sidebar .nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+
+
+.sticky-top {
+  background-color: #165AE9;
   color: #fff;
 }
 
-.buttonEnvio {
-  margin-left: 20px;
+.navbar {
+  background-color: #165AE9;
 }
 
-.nav-item a:hover {
-  color: #2162C2;
-}
 
 .sidebar .nav-link .feather {
   margin-right: 4px;
@@ -86,16 +64,13 @@ body {
 }
 
 .sidebar .nav-link.active {
-  color: #fff;
+  color: #2470dc;
 }
+
 
 .sidebar .nav-link:hover .feather,
 .sidebar .nav-link.active .feather {
   color: inherit;
-}
-
-header {
-  width: 100vw;
 }
 
 .sidebar-heading {
@@ -104,8 +79,15 @@ header {
 }
 
 /*
-   * Navbar
-   */
+ * Navbar
+ */
+
+.navbar-brand {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  font-size: 1rem;
+  background-color: #165AE9;
+}
 
 .navbar .navbar-toggler {
   top: .25rem;
@@ -126,21 +108,5 @@ header {
 
 .form-control-dark:focus {
   border-color: transparent;
-}
-
-.buttonEnvio {
-  border: 1px solid #CCD4E0;
-  box-sizing: border-box;
-  border-radius: 6px;
-  color: #165AE9;
-}
-
-.inputSearch {
-  width: 320px;
-  height: 52px;
-  left: 522px;
-  top: 24px;
-
-  background: #F9F9FB;
-  border-radius: 6px !important;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
 }

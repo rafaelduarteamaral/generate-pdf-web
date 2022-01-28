@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Proposta } from '../models/proposta';
 import { PropostaService } from '../services/proposta.service';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-proposta-formulario',
@@ -36,7 +37,8 @@ export class PropostaFormularioComponent implements OnInit {
           }, false)
         })
     })()
-    
+
+          
   }
 
     // defini se um carro será criado ou atualizado

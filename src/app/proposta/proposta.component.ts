@@ -1,17 +1,22 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Proposta } from '../models/proposta';
 import { PropostaService } from '../services/proposta.service';
+import { DataTableDirective } from 'angular-datatables';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-proposta',
   templateUrl: './proposta.component.html',
   styleUrls: ['./proposta.component.css']
 })
+
 export class PropostaComponent implements OnInit {
 
   proposta = {} as Proposta;
-  propostas: Proposta[] | undefined;
+  propostas: Proposta[] | any = [];
+  dtOptions: DataTables.Settings = {};
+
+  dtTrigger: Subject<any> = new Subject<any>();
 
   constructor(private propostaService: PropostaService) { }
 
@@ -19,10 +24,14 @@ export class PropostaComponent implements OnInit {
     this.getPropostas();
   }
 
-  getPropostas() {
+  getPropostas(): any {
     this.propostaService.getPropostas().subscribe((propostas: Proposta[]) => {
       this.propostas = propostas;
     });
+
   }
+  
+
+  
 
 }

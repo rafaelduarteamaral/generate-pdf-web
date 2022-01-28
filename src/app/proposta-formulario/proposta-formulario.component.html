@@ -99,13 +99,13 @@
 
             <div class="col-6">
               <label for="valorTransporte" class="form-label">Valor do transporte</label>
-              <input [(ngModel)]="proposta.valorTransporte" name="valorTransporte" type="number" class="form-control"
+              <input [(ngModel)]="proposta.valorTransporte" name="valorTransporte" type="text" class="form-control"
                 id="valorTransporte" placeholder="R$1.000,00" required>
             </div>
 
             <div class="col-6">
               <label for="prazoEntrega" class="form-label">Prazo de entrega</label>
-              <input [(ngModel)]="proposta.prazoEntrega" name="prazoEntrega" type="text" class="form-control"
+              <input [(ngModel)]="proposta.prazoEntrega" name="prazoEntrega" type="text" class="form-control prazoEntrega"
                 id="prazoEntrega" placeholder="" required>
             </div>
 
@@ -119,7 +119,6 @@
       </div>
     </div>
   </main>
-
   <footer class="my-5 pt-5 text-muted text-center text-small">
     <p class="mb-1">&copy; Destak</p>
     <!-- 

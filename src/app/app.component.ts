@@ -16,6 +16,8 @@ export class AppComponent {
   constructor(router: Router){ this.router = router;}
 
   ngOnInit(): void {
+
+    
     this.usuario = localStorage.getItem('user_logged');
 
     if(this.usuario) {

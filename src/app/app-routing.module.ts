@@ -8,7 +8,7 @@ import { PropostaComponent } from './proposta/proposta.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'proposta', component: PropostaComponent },
+  { path: 'propostas', component: PropostaComponent },
   { path: 'formularioProposta', component: PropostaFormularioComponent }
 ];
 

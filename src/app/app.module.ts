@@ -9,6 +9,7 @@ import { PropostaComponent } from './proposta/proposta.component';
 import { HeaderComponent } from './header/header.component';
 import { PropostaFormularioComponent } from './proposta-formulario/proposta-formulario.component';
 import { FormsModule } from '@angular/forms';
+import { DataTablesModule } from 'angular-datatables';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    DataTablesModule
   ],
   providers: [],
   bootstrap: [AppComponent],
