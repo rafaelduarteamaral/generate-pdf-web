@@ -4,6 +4,7 @@ import { Proposta } from '../models/proposta';
 import { PropostaService } from '../services/proposta.service';
 import Swal from 'sweetalert2';
 import { Usuario } from '../models/usuario';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -17,18 +18,22 @@ export class PropostaFormularioComponent implements OnInit {
   proposta = {} as Proposta;
   propostas: Proposta[] | undefined;
   usuario = {} as Usuario | any;
-
-  constructor(private propostaService: PropostaService) { }
+  id: any;
+  constructor(private propostaService: PropostaService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     
     this.usuario = localStorage.getItem('user_logged');
     this.usuario = JSON.parse(this.usuario)
     this.proposta.idUsuario =this.usuario.id;
-
-
-
-    (function () {
+    
+    this.id = this.route.snapshot.paramMap.get('id');
+    if(this.id) {
+      this.getProposta(this.id);
+    }  
+    
+    
+    (function () { 
       'use strict'
     
       // Fetch all the forms we want to apply custom Bootstrap validation styles to
@@ -51,10 +56,17 @@ export class PropostaFormularioComponent implements OnInit {
           
   }
 
+  getProposta(id: any): void {
+    this.propostaService.getPropostaId(id).subscribe((proposta: Proposta[]) => {
+      this.proposta = proposta[0];
+      console.log(proposta)
+    });
+  }
+
     // defini se um carro será criado ou atualizado
     saveProposta(form: NgForm) {
 
-      if (this.proposta.id !== undefined) {
+      if (this.id !== undefined) {
         this.propostaService.updateProposta(this.proposta).subscribe(() => {
           this.cleanForm(form);
           Swal.fire({
@@ -62,7 +74,8 @@ export class PropostaFormularioComponent implements OnInit {
             text: 'Proposta gerada!',
             icon: 'success',
             confirmButtonText: 'Cool'
-          }) 
+          })
+          this.getProposta(this.id);
         },
         (err) => {
           Swal.fire({
@@ -81,6 +94,7 @@ export class PropostaFormularioComponent implements OnInit {
             icon: 'success',
             confirmButtonText: 'Cool'
           }) 
+          this.router.navigate([`/propostas`]);
         },
         (err) => {
           Swal.fire({

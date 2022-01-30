@@ -24,6 +24,13 @@ export class PropostaService {
         catchError(this.handleError))
   }
 
+  getPropostaId(id: any): Observable<Proposta[]> {
+    return this.httpClient.get<Proposta[]>(this.url + '/' + id)
+      .pipe(
+        retry(2),
+        catchError(this.handleError))
+  }
+
 
   saveProposta(car: Proposta): Observable<Proposta> {
     return this.httpClient.post<Proposta>(this.url, JSON.stringify(car), this.httpOptions)

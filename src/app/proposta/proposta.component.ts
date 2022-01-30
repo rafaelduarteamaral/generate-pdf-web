@@ -6,6 +6,7 @@ import { Subject } from 'rxjs';
 import jsPDF from 'jspdf';
 import {MatDialog} from '@angular/material/dialog';
 import { PdfPropostaComponent } from '../pdf-proposta/pdf-proposta.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-proposta',
@@ -20,7 +21,7 @@ export class PropostaComponent implements OnInit {
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject<any>();
 
-  constructor(private propostaService: PropostaService, public dialog: MatDialog) { }
+  constructor(private propostaService: PropostaService, public dialog: MatDialog, private router: Router) { }
 
   ngOnInit(): void {
     this.getPropostas();
@@ -42,6 +43,10 @@ export class PropostaComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+
+  editProposta(id: any) {
+    this.router.navigate([`/formularioProposta/${id}`]);
   }
 
 

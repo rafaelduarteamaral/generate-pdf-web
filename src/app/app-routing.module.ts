@@ -14,6 +14,7 @@ if(usuario) {
   path = [
     { path: 'propostas', component: PropostaComponent },
     { path: 'formularioProposta', component: PropostaFormularioComponent },
+    { path: 'formularioProposta/:id', component: PropostaFormularioComponent },
     { path: 'pdfProposta', component: PdfPropostaComponent }
   ];
 } else {

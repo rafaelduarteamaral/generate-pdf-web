@@ -100,8 +100,8 @@
 
             <div class="col-sm-6">
               <label for="orcamentoServico" class="form-label">Orçamento de Serviço</label>
-              <input [(ngModel)]="proposta.orcamentoServico" name="orcamentoServico" type="text" class="form-control"
-                id="orcamentoServico" placeholder="" required>
+              <input currencyMask [options]="{ prefix: '', thousands: '.', decimal: ',' }" [(ngModel)]="proposta.orcamentoServico" name="orcamentoServico" type="text" class="form-control"
+                id="orcamentoServico" placeholder="R$1.000,00" required>
             </div>
 
             <div class="col-sm-6">
@@ -160,7 +160,8 @@
 
           <hr class="my-4">
 
-          <button class="w-100 btn btn-primary btn-lg" type="submit">Gerar Proposta</button>
+          <button *ngIf="!proposta.id" class="w-100 btn btn-primary btn-lg" type="submit">Gerar Proposta</button>
+          <button *ngIf="proposta.id"  class="w-100 btn btn-primary btn-lg" type="submit">Atualizar Proposta</button>
         </form>
       </div>
     </div>
