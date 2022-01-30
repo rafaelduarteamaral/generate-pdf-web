@@ -1,6 +1,7 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, retry, throwError } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Proposta } from '../models/proposta';
 
 @Injectable({
@@ -15,7 +16,7 @@ export class PropostaService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
 
-  url = 'http://localhost:3333/propostas';
+  url = environment.apiUrl+'/propostas';
 
   getPropostas(): Observable<Proposta[]> {
     return this.httpClient.get<Proposta[]>(this.url)

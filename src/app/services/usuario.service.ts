@@ -2,13 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
+import { environment } from './../../environments/environment';
 import { Usuario } from '../models/usuario';
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
+  
 
-  url = 'http://localhost:3333'; // api rest fake
+  url = environment.apiUrl; // api rest fake
 
   // injetando o HttpClient
   constructor(private httpClient: HttpClient) { }
@@ -28,7 +30,7 @@ export class UsuarioService {
   }
 
   loginUsuario(usuario: Usuario): Observable<Usuario> {
-    console.log(usuario)
+    console.log(environment.apiUrl)
     return this.httpClient.post<Usuario>(`${this.url}/login`, JSON.stringify(usuario), this.httpOptions)
       .pipe(
         retry(2),
