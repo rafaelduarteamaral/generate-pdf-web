@@ -12,6 +12,7 @@ import { Usuario } from '../models/usuario';
   styleUrls: ['./proposta-formulario.component.css']
 })
 export class PropostaFormularioComponent implements OnInit {
+  public customPatterns = { '0': { pattern: new RegExp('\[a-zA-Z\]')} };
 
   proposta = {} as Proposta;
   propostas: Proposta[] | undefined;

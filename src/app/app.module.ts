@@ -12,7 +12,15 @@ import { FormsModule } from '@angular/forms';
 import { DataTablesModule } from 'angular-datatables';
 import { PdfPropostaComponent } from './pdf-proposta/pdf-proposta.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatDialogModule } from '@angular/material/dialog'
+import { MatDialogModule } from '@angular/material/dialog';
+import { CurrencyMaskModule } from 'ng2-currency-mask';
+import { NgxMaskModule, IConfig } from 'ngx-mask'
+
+const maskConfig: Partial<IConfig> = {
+  validation: false,
+};
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +28,7 @@ import { MatDialogModule } from '@angular/material/dialog'
     PropostaComponent,
     HeaderComponent,
     PropostaFormularioComponent,
-    PdfPropostaComponent
+    PdfPropostaComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +37,9 @@ import { MatDialogModule } from '@angular/material/dialog'
     FormsModule,
     DataTablesModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    CurrencyMaskModule,
+    NgxMaskModule.forRoot(maskConfig),
   ],
   providers: [],
   bootstrap: [AppComponent],

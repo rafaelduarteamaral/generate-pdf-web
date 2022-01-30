@@ -1,172 +1,105 @@
-<!-- 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.88.1">
-    <title>Signin Template · Bootstrap v5.1</title>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.88.1">
+  <title>Dashboard Template · Bootstrap v5.1</title>
+  <script src="angular-input-masks-standalone.min.js"></script>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/dashboard/">
 
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
       }
+    }
+  </style>
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
 
-  </head>
-  <body class="text-center" *ngIf="logado">
-    <header class="navbar navbar-dark sticky-top flex-md-nowrap p-0 d-flex justify-content-start">
-      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">
-        <img src="../assets/logo.svg" alt="">        
-      </a>
-      <div class="col-md-9" style="background-color: #fff; margin-top: 0;">
-        <a class="btn buttonEnvio" href="formularioProposta">Nova Proposta</a>
+  <!-- Custom styles for this template -->
+</head>
+
+<body>
+
+  <header class="navbar navbar-dark sticky-top flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">
+      <img src="../assets/logo.svg" alt="">
+    </a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-nav">
+      <div class="nav-item text-nowrap">
+        <a class="nav-link px-3" href="#" (click)="logout()">Sign out</a>
       </div>
-  </header>
-  
-  <div class="container-fluid">
-      <div class="row">
-          <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
-              <div class="position-sticky pt-3" style="height: 80vh;">
-                  <ul class="nav flex-column">
-                      <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="#">
-                              <span data-feather="home"></span>
-                              Propostas
-                          </a>
-                      </li>
-                  </ul>
-              </div>
-              <div class="navbar-nav">
-                <div class="nav-item text-nowrap">
-                    <a class="nav-link px-3" href="#" (click)="logout()" >Sign out</a>
-                </div>
-            </div>
-          </nav>
-      </div>
-      <div class="aline-center">
-        <router-outlet></router-outlet>
-
-      </div>
-  </div>
-  </body> 
-
-  <body class="text-center d-flex justify-content-center" *ngIf="!logado" style="background-color: #165AE9; align-items: center
-  ;">
-    <router-outlet></router-outlet>
-  </body>
-</html>
-
- -->
-
-
- <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.88.1">
-    <title>Dashboard Template · Bootstrap v5.1</title>
-    <script src="angular-input-masks-standalone.min.js"></script>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/dashboard/">
-
-    
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-
-    
-    <!-- Custom styles for this template -->
-  </head>
-  <body>
-    
-<header class="navbar navbar-dark sticky-top flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">
-    <img src="../assets/logo.svg" alt="">        
-  </a>
-    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="navbar-nav">
-    <div class="nav-item text-nowrap">
-      <a class="nav-link px-3" href="#" (click)="logout()">Sign out</a>
     </div>
-  </div>
-</header>
+  </header>
 
-<div *ngIf="logado" class="container-fluid">
-  <div class="row">
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-      <div class="position-sticky pt-3">
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/propostas">
-              <span data-feather="home"></span>
-              Proposta
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+  <div *ngIf="logado" class="container-fluid">
+    <div class="row">
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="position-sticky pt-3">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/propostas">
+                <span data-feather="home"></span>
+                Proposta
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
 
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <!-- <h1 class="h2">Dashboard</h1> -->
-        <div class="btn-toolbar mb-2 mb-md-0">
-          <div class="btn-group me-2">
-            <a type="button" href="/formularioProposta" class="btn btn-sm btn-outline-secondary">Nova proposta</a>
-          </div>
-          <!-- <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div
+          class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <!-- <h1 class="h2">Dashboard</h1> -->
+          <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group me-2">
+              <a type="button" href="/formularioProposta" class="btn btn-sm btn-outline-secondary">Nova proposta</a>
+            </div>
+            <!-- <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
             <span data-feather="calendar"></span>
             This week
           </button> -->
+          </div>
         </div>
-      </div>
 
 
         <router-outlet></router-outlet>
 
-    </main>
+      </main>
+    </div>
   </div>
-</div>
 
-<div *ngIf="!logado">
-  <router-outlet></router-outlet>
+  <div *ngIf="!logado">
+    <router-outlet></router-outlet>
 
-</div>
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="dashboard.js"></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"
+    integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"
+    integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha"
+    crossorigin="anonymous"></script>
+  <script src="dashboard.js"></script>
+</body>
+
 </html>
-
