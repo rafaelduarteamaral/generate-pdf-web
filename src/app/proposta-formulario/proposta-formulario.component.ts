@@ -26,11 +26,11 @@ export class PropostaFormularioComponent implements OnInit {
     this.usuario = localStorage.getItem('user_logged');
     this.usuario = JSON.parse(this.usuario)
     this.proposta.idUsuario =this.usuario.id;
-    
-    this.id = this.route.snapshot.paramMap.get('id');
-    if(this.id) {
+
+    if(this.route.snapshot.paramMap.get('id')) {
+      this.id = this.route.snapshot.paramMap.get('id');
       this.getProposta(this.id);
-    }  
+    }
     
     
     (function () { 
