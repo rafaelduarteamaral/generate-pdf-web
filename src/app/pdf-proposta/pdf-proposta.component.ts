@@ -23,7 +23,7 @@ export class PdfPropostaComponent implements OnInit {
     let pdf = new jsPDF('p', 'pt', 'a4');
     pdf.html(this.el.nativeElement, {
       callback: (pdf) => {
-        pdf.save('proposta.pdf')
+        pdf.save('propostas.pdf')
       }
     })
   }
