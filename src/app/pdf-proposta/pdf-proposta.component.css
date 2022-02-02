@@ -46,25 +46,25 @@ body {
     background-color: #FAFAFA;
     font: 09pt "Tahoma";
   }
-  
+
   * {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
   }
-  
+
   .page {
-    width: 17cm;
+    width: 23.5cm;
     min-height: 30cm;
-    border: 1px #D3D3D3 solid;
-    border-radius: 5px;
+    /* border: 1px #D3D3D3 solid;
+    border-radius: 5px; */
     background: white;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
     line-height: 0.9;
   }
-  
+
   .subpage {
-    padding: 1cm;
-    border: 5px red solid;
+    /* padding: 1cm; */
+    /* border: 5px red solid; */
     height: 300mm;
     outline: 2cm #FFEAEA solid;
   }

@@ -20,10 +20,10 @@ export class PdfPropostaComponent implements OnInit {
   }
 
   printPDF() {
-    let pdf = new jsPDF('p', 'pt', 'a4');
+    let pdf = new jsPDF('p', 'mm', 'A0');
     pdf.html(this.el.nativeElement, {
       callback: (pdf) => {
-        pdf.save('proposta.pdf')
+        pdf.save('propostas.pdf')
       }
     })
   }
