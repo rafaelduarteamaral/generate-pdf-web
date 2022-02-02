@@ -1,132 +1,136 @@
 <br><br>
-<mat-dialog-content class="mat-typography page" id="content" #content>
-  <div class="col-md-9 d-flex justify-content-around">
-    <div class="">
-      <img class="logo" src="../../assets/Ativo 5.png" alt="">
+<mat-dialog-content class="mat-typography page d-flex justify-content-center justify-content-lg-center
+" id="content" #content>
+  <div>
+    <div class="col-md-9 d-flex justify-content-around">
+      <div class="">
+        <img class="logo" src="../../assets/Ativo 5.png" alt="">
+      </div>
+      <div class="">
+        <h2 mat-dialog-title>Proposta Comercial</h2>
+      </div>
     </div>
-    <div class="">
-      <h2 mat-dialog-title>Proposta Comercial</h2>
-    </div>
-  </div>
-  <div class="col-md-12">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 d-flex justify-content-around">
-          <div class="col-md-5 border dadosCliente d-flex justify-content-center">
-            <div>
-              <br>
-              <h1>
-                <p>Dados do Cliente</p>
-              </h1>
-              <h3>
-                <p>Cliente:</p>
-              </h3>
-              <p>{{ data.cliente }}</p>
-              <h3>
-                <p>Telefone:</p>
-              </h3>
-              <p>{{ data.telefoneCelular }}</p>
-              <h1>
-                <p>Dados do Veículo</p>
-              </h1>
-              <p><b>Marca:</b> {{ data.modeloVeiculo }}</p>
-              <p><b>Modelo:</b> Tucson XYZ 2.0</p>
-              <p><b>Cor:</b> Preto</p>
-              <p><b>Ano:</b> 2007/2007</p>
+    <br>
+    <div class="col-md-12">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 d-flex justify-content-around">
+            <div class="col-md-5 border dadosCliente d-flex justify-content-center">
+              <div>
+                <br>
+                <h1>
+                  <p>Dados do Cliente</p>
+                </h1>
+                <h3>
+                  <p>Cliente:</p>
+                </h3>
+                <p>{{ data.cliente }}</p>
+                <h3>
+                  <p>Telefone:</p>
+                </h3>
+                <p>{{ data.telefoneCelular }}</p>
+                <h1>
+                  <p>Dados do Veículo</p>
+                </h1>
+                <p><b>Marca:</b> {{ data.modeloVeiculo }}</p>
+                <p><b>Modelo:</b> Tucson XYZ 2.0</p>
+                <p><b>Cor:</b> Preto</p>
+                <p><b>Ano:</b> 2007/2007</p>
+              </div>
+            </div>
+            <div class="col-md-5 border dadosOrcamento d-flex justify-content-center i">
+
+              <div>
+                <br>
+                <h2>
+                  <p>Orçamento*</p>
+                </h2>
+                <p>Valor do Transporte:</p>
+                <p>R$ {{data.valorTransporte}}</p>
+                <p>Serviços Opcionais</p>
+                <p>Coleta de Veículo:</p>
+                <p>R$ {{data.valorColeta}}</p>
+                <p>Entrega de Veículo:</p>
+                <p>R$ {{data.entrega}}</p>
+              </div>
             </div>
           </div>
-          <div class="col-md-5 border dadosOrcamento d-flex justify-content-center i">
 
-            <div>
-              <br>
-              <h2>
-                <p>Orçamento*</p>
-              </h2>
-              <p>Valor do Transporte:</p>
-              <p>R$ {{data.valorTransporte}}</p>
-              <p>Serviços Opcionais</p>
-              <p>Coleta de Veículo:</p>
-              <p>R$ {{data.valorColeta}}</p>
-              <p>Entrega de Veículo:</p>
-              <p>R$ {{data.entrega}}</p>
-            </div>
+          <hr class="my-4">
+
+          <div class="col-md-4 text-center">
+            <img class="iconsAtivo" src="../../assets/Ativo 3.png" alt="">
+            <br>
+            <h2>
+              <p>Veículo Seguro</p>
+            </h2>
+            <p>
+              Todos os veículos
+              transportados
+              possuem seguro.
+            </p>
+          </div>
+
+          <div class="col-md-4 text-center">
+            <img class="iconsAtivo" src="../../assets/Ativo 2.png" alt="">
+            <br>
+            <h2>
+              <p>Cobertura</p>
+            </h2>
+            <p> A Destak está em todo o
+              Brasil! Sediada em Brasília e com
+              14 filiais espalhadas pelo país.</p>
+          </div>
+
+          <div class="col-md-4 text-center">
+            <img class="iconsAtivo" src="../../assets/Ativo 1.png" alt="">
+            <br>
+            <h2>
+              <p>Agilidade</p>
+            </h2>
+            <p>
+              Nossos profissionais são
+              treinados para te atender
+              com agilidade.
+            </p>
           </div>
         </div>
 
         <hr class="my-4">
 
-        <div class="col-md-4 text-center">
-          <img class="iconsAtivo" src="../../assets/Ativo 3.png" alt="">
-          <br>
-          <h2>
-            <p>Veículo Seguro</p>
-          </h2>
-          <p>
-            Todos os veículos
-            transportados
-            possuem seguro.
-          </p>
-        </div>
+        <div class="col-md-12 text-center">
+          <h2>Rota do Transporte</h2>
+          <div class="row">
+            <div class="col-md-4">
+              <h3>
+                <p>Local de Origem:</p>
+              </h3>
+              <p>{{data.origemVeiculo}}</p>
+              <h3>
+                <p>Local de Coleta:</p>
+              </h3>
+              <p>{{data.enderecoColetaVeiculo}}</p>
+            </div>
+            <div class="col-md-4">
+              <img src="../../assets/Ativo 4.png" alt="">
 
-        <div class="col-md-4 text-center">
-          <img class="iconsAtivo" src="../../assets/Ativo 2.png" alt="">
-          <br>
-          <h2>
-            <p>Cobertura</p>
-          </h2>
-          <p> A Destak está em todo o
-            Brasil! Sediada em Brasília e com
-            14 filiais espalhadas pelo país.</p>
-        </div>
-
-        <div class="col-md-4 text-center">
-          <img class="iconsAtivo" src="../../assets/Ativo 1.png" alt="">
-          <br>
-          <h2>
-            <p>Agilidade</p>
-          </h2>
-          <p>
-            Nossos profissionais são
-            treinados para te atender
-            com agilidade.
-          </p>
-        </div>
-      </div>
-
-      <hr class="my-4">
-
-      <div class="col-md-12 text-center">
-        <h2>Rota do Transporte</h2>
-        <div class="row">
-          <div class="col-md-4">
-            <h3>
-              <p>Local de Origem:</p>
-            </h3>
-            <p>{{data.origemVeiculo}}</p>
-            <h3>
-              <p>Local de Coleta:</p>
-            </h3>
-            <p>{{data.enderecoColetaVeiculo}}</p>
-          </div>
-          <div class="col-md-4">
-            <img src="../../assets/Ativo 4.png" alt="">
-
-          </div>
-          <div class="col-md-4">
-            <h3>
-              <p>Local de Destino:</p>
-            </h3>
-            <p>{{data.destinoVeiculo}}</p>
-            <h3>
-              <p>Local de Entrega:</p>
-            </h3>
-            <p>{{data.enderecoEntregaVeiculo}}</p>
-          </div>
-          <div class="col-md-12 d-flex justify-content-around">
-            <h3>
-              <p>* Parcelamento em até <b>3x sem júros</b> no cartão de crédito via link de pagamento</p>
-              <p>ou em até <b>10x sem júros</b> no cartão de crédito para transações presenciais.</p>
-            </h3>
+            </div>
+            <div class="col-md-4">
+              <h3>
+                <p>Local de Destino:</p>
+              </h3>
+              <p>{{data.destinoVeiculo}}</p>
+              <h3>
+                <p>Local de Entrega:</p>
+              </h3>
+              <p>{{data.enderecoEntregaVeiculo}}</p>
+            </div>
+            <div class="col-md-12 d-flex justify-content-around">
+              <h3>
+                <p>* Parcelamento em até <b>3x sem júros</b> no cartão de crédito via link de pagamento</p>
+                <p>ou em até <b>10x sem júros</b> no cartão de crédito para transações presenciais.</p>
+              </h3>
+            </div>
           </div>
         </div>
       </div>
